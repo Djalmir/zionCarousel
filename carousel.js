@@ -298,6 +298,7 @@ class Carousel extends HTMLElement {
 					closeBt.style.animation = '.2s linear carouselFadeIn 1'
 
 					const rmFullScreen = () => {
+						window.removeEventListener('keydown', kd)
 
 						let newCompBounding = spaceKeeper.getBoundingClientRect()
 						Array.from(document.styleSheets[document.styleSheets.length - 1].cssRules).find(cr => cr.name == 'carouselHide')[1].style = `
@@ -337,7 +338,6 @@ class Carousel extends HTMLElement {
 					const kd = (e) => {
 						switch (e.key) {
 							case 'Escape':
-								window.removeEventListener('keydown', kd)
 								rmFullScreen()
 								break
 							case 'ArrowLeft':
