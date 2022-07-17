@@ -324,6 +324,7 @@ class Carousel extends HTMLElement {
 							// if (allCss)
 							// 	allCss.style.overflow = ''
 							this.style = ''
+							documentBody.removeChild(closeBt)
 						}
 
 						this.style.animation = '.4s ease-in-out carouselHide'
